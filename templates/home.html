@@ -1,0 +1,291 @@
+<!--<!doctype html>-->
+<html>
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   <body>
+   <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">                       
+      </button>
+      <h1>Behaviour Logging Service</h1>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group input-group">       
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li style="margin-top: 10px"><a href="#"><span class="glyphicon glyphicon-user"></span> Hello {{ session['username'] }} !!!</a></li>
+        <li>
+        <form action="/logout" method="POST">
+      <div class="submit">
+      <button type="submit" class="btn btn-warning">Log Out</button>
+      </div>
+      </form>
+      </li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+<div>
+      Click below for link
+      <form action="https://stackoverflow.com/questions/tagged/java?sort=frequent&pageSize=15&username={{session['username']}}" method="POST">
+      <button type="submit">stack overflow=java</button>
+      </form>
+      <p><b> The user actions logged are chosen based on usability:<b><br>
+      Developer Jobs action log- To log if the user is interested in jobs<br>
+      Search Tab action log- To log what the user search interest<br>
+      Ask question action log- To log the user interest of asking a question<br>
+      View question action log- To log if the user looks up any question<br>
+      Tag interaction action log- To log if the user clicks on any tag</p>
+      <!-- <input type="button" name="tablebutton" value="Click to Show/Hide Interactions Log Table" onclick="showTable()"/> -->
+      <a onclick="showTable()">Show/Hide Interactions Log Table</a>
+      <script>
+      function showTable()
+      {
+        if(document.getElementById("table1").style.display == "block")
+        {
+          document.getElementById("table1").style.display="none";
+        }
+        else
+        {
+         document.getElementById("table1").style.display="block"; 
+        }
+      }
+      </script>
+      <div id="table1" class="table-responsive" style="display:none">
+      <table class="table">
+      <thead>
+      <tr>
+         <th>Type of Interaction for this user</th>
+         <th>Timestamp</th>
+      </tr>
+      </thead>
+      {% for obj in data %}
+      <tbody>
+         <tr>
+         <td>{{ obj['event'] }}</td>
+         <td>{{ obj['timestamp'] }}</td>
+         </tr>
+      {% endfor %}
+      </tbody>
+      </table>
+      </div>
+
+      <div class="table-responsive">
+      <table id="datatable" style="visibility:hidden">
+      <thead>
+      <tr>
+         <th>Name of Interaction</th>
+         <th>Count</th>
+      </tr>
+      </thead>
+      {% for obj1 in data1 %}
+      <tbody>
+         <tr>
+         <td>{{ obj1['eventname'] }}</td>
+         <td>{{ obj1['count'] }}</td>
+         </tr>
+      {% endfor %}
+      </tbody>
+      </table>
+
+      </div>
+
+      <div id='container' style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+      <script>
+      console.log("inside highcharts");
+      Highcharts.chart('container', {
+    data: {
+        table:'datatable'
+    },
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Line graph showing the Users Interaction and their count'
+    },
+    yAxis: {
+        allowDecimals: false,
+        title: {
+            text: 'Units'
+        }
+    },
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.name + '</b><br/>' +
+                this.point.y + ' ' + this.point.name.toLowerCase();
+        }
+    }
+ });
+    </script>
+  <h3>
+  <ul>
+  <li>
+  Pattern 1-User's most favourite interaction-{{session['action1']}}
+  </li>
+  <li>
+  This is determined using the maximum count of performed interactions for this user
+  </li>
+  <li>
+  This pattern matters because it helps in finding the user interest
+  </li>
+  </ul>
+  </h3>
+  <br>
+  <h3>Choose Timeframe from Dropdown</h3>
+   <form action="/handletimeframe" method="POST">
+  <select name="Timeframe">
+    <option value="today">Today</option>
+    <option value="yesterday">Yesterday</option>
+    <option value="month">Current month</option>
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+    <div class="table-responsive">
+      <table id="datatable1" style="visibility:hidden">
+      <thead>
+      <tr>
+         <th>Name of Interaction</th>
+         <th>Count</th>
+      </tr>
+      </thead>
+      {% for obj1 in data2 %}
+      <tbody>
+         <tr>
+         <td>{{ obj1['eventname'] }}</td>
+         <td>{{ obj1['count'] }}</td>
+         </tr>
+      {% endfor %}
+      </tbody>
+      </table>
+      </div>
+
+      <div id='container1' style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+      <script>
+      console.log("{{data2}}");
+      Highcharts.chart('container1', {
+    data: {
+        table:'datatable1'
+    },
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Bar graph showing count of interactions {{session['tf1']}}'
+    },
+    yAxis: {
+        allowDecimals: false,
+        title: {
+            text: 'Units'
+        }
+    },
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.name + '</b><br/>' +
+                this.point.y + ' ' + this.point.name.toLowerCase();
+        }
+    }
+ });
+    </script>
+    <h3>
+    <ul>
+    <li> 
+    Pattern 2-User interacted the most with {{session['action2']}} {{session['tf1']}}
+    </li>
+     <li>
+    This is determined using the maximum count of performed interactions for this user in the selected timeframe
+    </li>
+    <li>
+    This pattern matters because it helps in finding the user interest on a particular timeframe
+    </li>
+    </ul>
+    </h3>
+    <br>
+    <h3>Choose type of interaction from dropdown</h3>
+
+    <form action="/handleevent" method="POST">
+      <select name="Event">
+        <option value="tag interaction">Tag Interaction</option>
+        <option value="search tab interaction">Search Tab interaction</option>
+        <option value="Job search interaction">Job Search Interaction</option>
+        <option value="view question interaction">View Question Interaction</option>
+        <option value="Ask question interaction">Ask Question Interaction</option>
+      </select>
+      <br><br>
+      <input type="submit">
+  </form>
+    <div class="table-responsive">
+      <table id="datatable2" style="visibility:hidden">
+      <thead>
+      <tr>
+         <th>Date</th>
+         <th>Count</th>
+      </tr>
+      </thead>
+      {% for obj1 in data3 %}
+      <tbody>
+         <tr>
+         <td>{{ obj1['username'] }}</td>
+         <td>{{ obj1['count'] }}</td>
+         </tr>
+      {% endfor %}
+      </tbody>
+      </table>
+      </div>
+
+      <div id='container2' style="min-width: 510px; height: 400px; margin: 0 auto"></div>
+      <script>
+      Highcharts.chart('container2', {
+    data: {
+        table:'datatable2'
+    },
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: 'Pie chart of {{session['eventaction']}} for all users '
+    },
+    yAxis: {
+        allowDecimals: false,
+        title: {
+            text: 'Units'
+        }
+    },
+    xAxis: {
+      type: 'datetime',
+    },
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.name + '</b><br/>' +
+                this.point.y;
+        }
+    }
+ });
+    </script> 
+      <h3>
+      <ul>
+      <li>
+      Pattern 3-User {{session['maxuser']}} has interacted the most on {{session['eventaction']}}
+      </li>
+      <li>
+      This is determined using the count of the selected interactions for every user
+      </li>
+      <li>
+      This pattern matters because it helps in comparing the behaviour of different users with respect to the selected interaction
+      </li>
+      </ul>  
+      </h3>   
+      </div>
+   </body>
+</html>

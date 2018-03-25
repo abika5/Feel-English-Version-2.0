@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style> 
+body, html {
+    height: 100%;
+}
+.bg { 
+    /* The image used */
+    background-image: url("/static/flowers-landscape-1.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text {
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 20px;
+    margin: 8px 0;
+
+    
+}
+.submit {
+ 	text-align: center;
+    padding: 30px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+div{
+	background: transparent;
+}
+h1{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 140px;
+	font-style: italic;
+	 
+}
+label{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 30px;
+	font-style: italic;
+	padding: 30px 20px;
+}
+</style>
+<body class="bg">
+<form action="/login_validation" method="POST">
+			<div class="text">
+				<h1>Feel English</h1>
+				<label for="username">Username</label>
+				<input type="text" value="" placeholder="username" name="username">
+			</div>
+			<div class="text">
+				<label for="password">Password</label>
+				<input type="password" value="" placeholder="password" name="password">
+			</div>
+			<div class="submit">
+                <button type="submit" class="btn-primary">Log In</button>
+			</div>
+			<br>
+	
+</form>
+<form action="/signup" method="POST">
+		<div class="submit">
+		<button type="submit" class="btn-primary">Register</button>
+		</div>
+	
+</form>
+</body>

@@ -1,0 +1,45 @@
+
+.text {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    
+}
+.submit {
+ width: 100%;
+   
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.btn-primary{
+   border: 2px solid transparent;
+}
+
+ 
+body, html {
+    height: 100%;
+}
+.bg { 
+    /* The image used */
+    background-image: url("/static/flowers-landscape-1.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+ 
+
+
+ 

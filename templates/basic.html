@@ -1,0 +1,174 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style> 
+body, html {
+    height: 100%;
+    width: 100%
+}
+
+.ul_menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.li_menu{
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.li_menu_a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.li_menu_a:hover:not(.active) {
+    background-color: white;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+.bg { 
+    /* The image used */
+    background-image: url("/static/3.jpg");
+
+    /* Full height */
+    height: 100%; 
+    width:100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text {
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 20px;
+    margin: 8px 0;
+
+    
+}
+.submit {
+ 	text-align: center;
+    padding: 30px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+div{
+	background: transparent;
+}
+h1{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 140px;
+	font-style: italic;
+	 
+}
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: auto;
+	align-content: center;
+}
+label{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 30px;
+	font-style: italic;
+	padding: 30px 20px;
+}
+p{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 40px;
+	text-align: center;
+	font-style: italic;
+  padding:0;
+  font-weight:bold;
+
+	
+}
+.button5 {border-radius: 30%;
+text-align: center;}
+.button {
+    background-color: #7eb530;
+    border: none;
+    color: #130202;
+    padding:50px;
+    text-align: center;
+    text-decoration: none;
+    font-weight:bold;
+    display: inline-block;
+    font-size: 30px;
+    margin: 0;
+    margin-left: 40%;
+
+}
+
+.button:hover{
+	background-color: #bfb3ede3;
+}
+.ul_in {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: transparent;
+    align-self: center;
+    display: inline;
+
+}
+
+li {
+    float: down;
+    margin: 0;
+    padding: 0;
+
+}
+
+li a:hover {
+    background-color: #111111;
+}
+
+</style>
+<body class="bg">
+<ul class="ul_menu">
+  <li class="li_menu"><a class="li_menu_a" href="#home">Home</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#news">News</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#contact">Contact</a></li>
+  <li class="li_menu"><a class="li_menu_a" class="active" href="#about">About</a></li>
+</ul>
+<div>
+<form>
+	<p>This is the fore most level in this course</p>
+	<p>We will be studying about nouns and their usage in a sentence. This basic course has 3 levels and on each level we will learn new set of nouns and their usage.Happy Studying!</p>
+	<div class="table">
+	<ul class="ul_in">
+		<li>
+  			<form action="/basic">
+  				
+  			</form>
+  		</li>
+		
+  		<li>
+  			<form action="/level1_basic">
+  				<button class="button button5" type="submit">LEVEL 1</button>
+  			</form>
+  		</li>
+  		<li>
+  			<form action="/intermediate">
+  				<button class="button button5" type="submit">LEVEL 2</button>
+  			</form>
+  		</li>
+  		<li>
+  			<form action="/advanced">
+  				<button class="button button5" type="submit">LEVEL 3</button>
+  			</form>
+  		</li>
+  		
+</ul>
+</div>
+</body>

@@ -1,0 +1,7 @@
+create table users (name varchar(5),password varchar(5));
+
+insert into users values('aaa','123');
+insert into users values('bbb','123');
+insert into users values('ccc','123');
+
+create table logactions (username varchar(50), action varchar(500), event varchar(50), ts timestamp);
