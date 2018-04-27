@@ -1,7 +1,13 @@
-create table users (name varchar(5),password varchar(5));
+CREATE TABLE `users` (
+  `username` varchar(5) DEFAULT NULL,
+  `password` varchar(5) DEFAULT NULL,
+  `firstname` varchar(45) DEFAULT NULL,
+  `lastname` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8
 
 insert into users values('aaa','123');
 insert into users values('bbb','123');
 insert into users values('ccc','123');
-
-create table logactions (username varchar(50), action varchar(500), event varchar(50), ts timestamp);
