@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="/static/style.css" type="text/css"> 
+<link rel="stylesheet" href="/static/style.css" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<style> 
+<style>
 body, html {
     height: 100%;
 }
@@ -16,9 +16,24 @@ background: transparent;
     overflow: hidden;
     background-color: #f19a16;
 }
-
-.li_menu{
+.ll_menu{
     float: left;
+
+}
+.ll_color{
+  font-family: "Verdana", Geneva, sans-serif;
+  font-style: italic;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+
+}
+.li_menu{
+    float: right;
     border-right: 1px solid #bbb;
 }
 
@@ -46,7 +61,6 @@ background: transparent;
     background-image: url("/static/black2.jpg");
 
     /* Full height */
-
     height: 100%; 
 
     /* Center and scale the image nicely */
@@ -60,10 +74,10 @@ background: transparent;
     font-size: 20px;
     margin: 8px 0;
 
-    
+
 }
 .submit {
-  text-align: center;
+ 	text-align: center;
     padding: 30px 20px;
     margin: 8px 0;
     cursor: pointer;
@@ -71,29 +85,40 @@ background: transparent;
 }
 
 h1{
-  font-family: "Times New Roman", Times, serif;
-  font-size: 140px;
-  font-style: italic;
-   
+	font-family: "Times New Roman", Times, serif;
+	font-size: 140px;
+	font-style: italic;
+
 }
 .table {
-  display: table;   /* Allow the centering to work */
-  margin: auto;
-  align-content: center;
+	display: table;   /* Allow the centering to work */
+	margin: auto;
+	align-content: center;
 }
 label{
-  font-family: "Times New Roman", Times, serif;
-  font-size: 30px;
-  font-style: italic;
-  padding: 30px 20px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 30px;
+	font-style: italic;
+	padding: 30px 20px;
 }
 p{
-  font-family: "Verdana", Geneva, sans-serif;
-  font-size: 30px;
+	font-family: "Verdana", Geneva, sans-serif;
+	font-size: 30px;
   text-align: center;
-  color: #fff;
-  
+    color: white;
+
+
 }
+
+body{
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #333;
+}
+.question{
+    font-weight: 600;
+}
+
 .button5 {border-radius: 60%;
 text-align: center;}
 .button {
@@ -110,8 +135,11 @@ text-align: center;}
 }
 
 .button:hover{
-  background-color: #f65d14e3;
+	background-color: #f65d14e3;
 }
+
+
+
 .ul_in {
     list-style-type: none;
     margin: 0;
@@ -136,51 +164,28 @@ text-align: center;}
 .w3-container{padding:0.01em 16px}
 .w3-black{color:#fff!important;background-color:#000!important}
 
-li {
-    float: left;
 
-}
 
 li a:hover {
     background-color: #111111;
+}
+li b:hover {
+
 }
 
 </style>
 <body class="bg">
 <ul class="ul_menu">
-  <li class="li_menu"><a class="li_menu_a" href="#home">Home</a></li>
-  <li class="li_menu"><a class="li_menu_a" href="#news">Assistant</a></li>
-  <li class="li_menu"><a class="li_menu_a" href="#contact">Help</a></li>
+  <li class="ll_menu"><b class= "ll_color">Feel-English</b></li>
   <li class="li_menu"><a class="li_menu_a" class="active" href="#about">My score</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#contact">Help</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#news">Assistant</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#home">Home</a></li>
 </ul>
-<div>
 <form>
-	<p>This is the fore most level in this course</p>
-	<p>We will be studying about nouns and their usage in a sentence. This basic course has 3 levels and on each level we will learn new set of nouns and their usage.Happy Studying!</p>
-	<div class="table">
-	<ul class="ul_in">
-		<li>
-  			<form action="/basic">
-  				
-  			</form>
-  		</li>
-		
-  		<li>
-  			<form action="/level1_basic_main">
-  				<button class="button button5" type="submit">LEVEL 1</button>
-  			</form>
-  		</li>
-  		<li>
-  			<form action="/level2_basic_main">
-  				<button class="button button5" type="submit">LEVEL 2</button>
-  			</form>
-  		</li>
-  		<li>
-  			<form action="/level3_basic">
-  				<button class="button button5" type="submit">LEVEL 3</button>
-  			</form>
-  		</li>
-  		  
-</ul>
-</div>
-</body>
+  <br>
+  	<div align="center">
+    <p> Check out these links for interactive games</p>
+    <a href="https://www.gamestolearnenglish.com/hangman/">HANGMAN</a>
+    <a href="https://www.boatloadpuzzles.com/playcrossword">CROSSWORDS</a>
+    </div>

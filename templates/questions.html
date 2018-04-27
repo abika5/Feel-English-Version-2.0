@@ -1,0 +1,416 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><style> 
+body, html {
+    height: 100%;
+    width: 100%;
+}
+.question{
+    font-family: "Verdana", Geneva, sans-serif;
+	font-size: 30px;
+	text-align: left;
+ 	line-height: 100%;
+ 	color: white;
+}
+.answers {
+    margin-bottom: 20px;
+    font-family: "Verdana", Geneva, sans-serif;
+	font-size: 30px;
+	text-align: left;
+ 	line-height: 100%;
+ 	float: down;
+ 	color: white;
+}
+
+div {
+
+background: transparent;
+}
+.ul_menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 10;
+    overflow: hidden;
+    background-color: #f19a16;
+}
+
+.li_menu{
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.li_menu_a{
+    font-family: "Verdana", Geneva, sans-sserif;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.li_menu_a:hover:not(.active) {
+    background-color: white;
+
+}
+
+.active {
+    background-color: #4CAF50;
+}
+.bg { 
+    /* The image used */
+    background-image: url("/static/black2.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text {
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 20px;
+    margin: 8px 0;
+
+    
+}
+audio controls
+{
+	text-align: left;
+}
+.submit {
+ 	text-align: center;
+    padding: 30px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+h1{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 140px;
+	font-style: italic;
+	 
+}
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: auto;
+	align-content: center;
+}
+label{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 30px;
+	font-style: italic;
+	padding: 30px 20px;
+}
+li
+{
+	font-family: "Verdana", Geneva, sans-serif;
+	font-size: 30px;
+	text-align: left;
+	line-height: 100%;
+	color:white;
+}
+p{
+	font-family: "Verdana", Geneva, sans-serif;
+	font-size: 30px;
+	text-align: center;
+ 	line-height: 100%;
+ 	color:white;
+	
+}
+.button5 {border-radius: 60%;
+text-align: center;}
+.button {
+    background-color: #7eb530;
+    border: none;
+    color: #130202;
+    padding:50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 4px 2px;
+    margin-left: 230px;
+}
+
+.button:hover{
+	background-color: #f65d14e3;
+}
+.ul_in {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    align-self: center;
+    display: inline;
+
+}
+.w3-center{text-align:center!important}
+.mySlides {display:none}
+.w3-content{max-width:450px;margin:auto}
+.w3-section{margin-top:16px!important;margin-bottom:16px!important}
+
+.w3-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.w3-light-grey{color:#000!important;background-color:#f1f1f1!important}
+.w3-display-container{position:relative}
+.w3-display-bottomleft{position:absolute;left:0;bottom:0}
+.w3-large{font-size:24px!important; font-weight:bold}
+.w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}
+.w3-container{padding:0.01em 16px}
+.w3-black{color:#fff!important;background-color:#000!important}
+
+li {
+    float: down;
+
+}
+
+li a:hover {
+    background-color: #111111;
+}
+
+</style>
+<body class="bg">
+<ul class="ul_menu">
+  <li class="li_menu"><a class="li_menu_a" href="#home">Home</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#news">Assistant</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#contact">Help</a></li>
+  <li class="li_menu"><a class="li_menu_a" class="active" href="#about">My score</a></li>
+</ul>
+<div>
+<p>This page tests your understanding on english sentences</p>
+<p>Answer the following questions to test your undersatnding</p>
+<p>Good Luck!</p>
+</div>
+<div id="quiz"></div>
+<button id="submit">Get Results</button>
+<div id="results"></div>
+<script>
+var quiz_section = document.getElementById('quiz');
+var results_section = document.getElementById('results');
+var on_submit = document.getElementById('submit');
+var questions = [
+	{
+		question: "1. I [blank] mineral water",
+		answers: {
+			a: 'sat',
+			b: 'eat',
+			c: 'drink'
+		},
+		correctAnswer: 'c'
+	},
+	{
+		question: "2.There is a [blank] here",
+		answers: {
+			a: 'party',
+			b: 'bottles',
+			c: 'chairs'
+		},
+		correctAnswer: 'a'
+	},
+	{
+		question: "3.[Blank] are drinking wine and beer",
+		answers: {
+			a: 'She',
+			b: 'People',
+			c: 'His'
+		},
+		correctAnswer: 'b'
+	},
+	{
+		question: "4. The [blank] likes milk",
+		answers: {
+			a: 'picture',
+			b: 'baby',
+			c: 'box'
+		},
+		correctAnswer: 'b'
+	},
+	{
+		question: "5. She [blank] watching a film",
+		answers: {
+			a: 'is',
+			b: 'they',
+			c: 'are'
+		},
+		correctAnswer: 'a'
+	},
+	{
+		question: "6. Where do [blank] plan to go?",
+		answers: {
+			a: 'the',
+			b: 'they',
+			c: 'are'
+		},
+		correctAnswer: 'b'
+	},
+	{
+		question: "7. Snow is [blank]",
+		answers: {
+			a: 'black',
+			b: 'orange',
+			c: 'white'
+		},
+		correctAnswer: 'c'
+	},
+	{
+		question: "8. I [blank] an apple and a mango",
+		answers: {
+			a: 'have',
+			b: 'has',
+			c: 'is'
+		},
+		correctAnswer: 'a'
+	},
+	{
+		question: "9. I making [blank] fruit salad",
+		answers: {
+			a: 'a',
+			b: 'an',
+			c: 'are'
+		},
+		correctAnswer: 'a'
+	},
+	{
+		question: "10. We like to go for a walk [blank] Summer",
+		answers: {
+			a: 'in',
+			b: 'at',
+			c: 'on'
+		},
+		correctAnswer: 'a'
+	},
+	{
+		question: "11. What is [blank] weather like today?",
+		answers: {
+			a: 'they',
+			b: 'the',
+			c: 'an'
+		},
+		correctAnswer: 'b'
+	},
+	{
+		question: "12. There is a garden [blank] the house",
+		answers: {
+			a: 'above',
+			b: 'below',
+			c: 'behind'
+		},
+		correctAnswer: 'c'
+	},
+	{
+		question: "13. We are [blank] the apartment today",
+		answers: {
+			a: 'living',
+			b: 'cleaning',
+			c: 'dancing'
+		},
+		correctAnswer: 'b'
+	},
+	{
+		question: "14. Are you [blank] the fish in this pan?",
+		answers: {
+			a: 'shaking',
+			b: 'building',
+			c: 'frying'
+		},
+		correctAnswer: 'c'
+	},
+	{
+		question: "15. I waited for you for half [blank] hour",
+		answers: {
+			a: 'a',
+			b: 'an',
+			c: 'the'
+		},
+		correctAnswer: 'b'
+	}
+
+];
+function showQuiz(questions, quiz_section, results_section, on_submit){
+
+	function displayQuestions(questions, quiz_section){
+		// code will go here
+		var output = [];
+	var answers;
+
+	// for each question...
+	for(var i=0; i<questions.length; i++){
+		
+		// first reset the list of answers
+		answers = [];
+
+		// for each available answer to this question...
+		for(letter in questions[i].answers){
+
+			// ...add an html radio button
+			answers.push(
+				'<label>'
+					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+					+ letter + ': '
+					+ questions[i].answers[letter]
+				+ '</label>'
+			);
+		}
+
+		// add this question and its answers to the output
+		output.push(
+			'<div class="question">' + questions[i].question + '</div>'
+			+ '<div class="answers">' + answers.join('') + '</div>'
+		);
+	}
+
+	// finally combine our output list into one string of html and put it on the page
+	quiz_section.innerHTML = output.join('');
+	}
+
+	function displayResults(questions, quiz_section, results_section){
+		// code will go here
+		var answerContainers = quiz_section.querySelectorAll('.answers');
+	
+	// keep track of user's answers
+	var userAnswer = '';
+	var numCorrect = 0;
+	
+	// for each question...
+	for(var i=0; i<questions.length; i++){
+
+		// find selected answer
+		userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+		
+		// if answer is correct
+		if(userAnswer===questions[i].correctAnswer){
+			// add to the number of correct answers
+			numCorrect++;
+			
+			// color the answers green
+			answerContainers[i].style.color = 'lightgreen';
+		}
+		// if answer is wrong or blank
+		else{
+			// color the answers red
+			answerContainers[i].style.color = 'red';
+		}
+	}
+
+	// show number of correct answers out of total
+	results_section.innerHTML = numCorrect + ' out of ' + questions.length;
+	}
+
+	// show the questions
+	displayQuestions(questions, quiz_section);
+
+	// when user clicks submit, show results
+	on_submit.onclick = function(){
+		displayResults(questions, quiz_section, results_section);
+	}
+}
+on_submit.onclick = function(){
+	displayResults(questions, quiz_section, results_section);
+}
+showQuiz(questions, quiz_section, results_section, on_submit);
+</script>

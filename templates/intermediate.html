@@ -1,32 +1,191 @@
 <link rel="stylesheet" href="/static/style.css" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<form action="/getsignup" method="POST">
-<p>intermediate page</p>	
-	<div>
-		<h1>Register</h1>
- 			<div class="text">
-			<label for="firstname">Firstname</label>
-			<input type="text" value="" placeholder="firstname" name="firstname">
-			</div>
-			<div class="text">
-			<label for="lastname">Lastname</label>
-			<input type="text" value="" placeholder="lastname" name="lastname">
-			</div>
-			<div class="text">
-			<label for="email">Email</label>
-			<input type="email" value="" placeholder="email" name="email">
-			</div>
-			<div class="text">
-			<label for="username">Username</label>
-			<input type="text" value="" placeholder="username" name="username">
-			</div>
-			<div class="text">
-			<label for="password">Password</label>
-			<input type="password" value="" placeholder="password" name="password">
- 			</div>
- 			<div class="submit">
-			<button type="submit" class="btn btn-primary">Sign up</button>
-			</div>
-			<br>
-	</div>
-</form>
+<style> 
+body, html {
+    height: 100%;
+}
+html.scrolled {
+    background-color: #f19a16;
+     background-image: url("/static/black2.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div {
+
+background: transparent;
+}
+.ul_menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 10;
+    overflow: hidden;
+    background-color: #f19a16;
+}
+
+.li_menu{
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.li_menu_a{
+    font-family: "Verdana", Geneva, sans-serif;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.li_menu_a:hover:not(.active) {
+    background-color: white;
+
+}
+
+.active {
+    background-color: #4CAF50;
+}
+.bg { 
+    /* The image used */
+    background-image: url("/static/black2.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text {
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 20px;
+    margin: 8px 0;
+
+    
+}
+.submit {
+    text-align: center;
+    padding: 30px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+h1{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 140px;
+    font-style: italic;
+     
+}
+.table {
+    display: table;   /* Allow the centering to work */
+    margin: auto;
+    align-content: center;
+}
+label{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    font-style: italic;
+    padding: 30px 20px;
+}
+p{
+    font-family: "Verdana", Geneva, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: white;   
+}
+.button5 {border-radius: 60%;
+text-align: center;}
+.button {
+    background-color: #7eb530;
+    border: none;
+    color: #130202;
+    padding:50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 4px 2px;
+    margin-left: 230px;
+}
+
+.button:hover{
+    background-color: #f65d14e3;
+}
+.ul_in {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    align-self: center;
+    display: inline;
+
+}
+.w3-center{text-align:center!important}
+.mySlides {display:none}
+.w3-content{max-width:450px;margin:auto}
+.w3-section{margin-top:16px!important;margin-bottom:16px!important}
+
+.w3-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.w3-light-grey{color:#000!important;background-color:#f1f1f1!important}
+.w3-display-container{position:relative}
+.w3-display-bottomleft{position:absolute;left:0;bottom:0}
+.w3-large{font-size:24px!important; font-weight:bold}
+.w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}
+.w3-container{padding:0.01em 16px}
+.w3-black{color:#fff!important;background-color:#000!important}
+
+li {
+    float: left;
+    color: white;
+
+}
+
+li a:hover {
+    background-color: #111111;
+}
+
+</style>
+<body class="bg">
+<ul class="ul_menu">
+  <li class="li_menu"><a class="li_menu_a" href="#home">Home</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#news">Assistant</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#contact">Help</a></li>
+  <li class="li_menu"><a class="li_menu_a" class="active" href="#about">My score</a></li>
+</ul>
+    <div>
+    <p>Intermediate Level</p>   
+    <p>This level helps in learning statements, grammar and conversations in English</p>
+    <p>There is a section for questions to test your understanding</p>
+    <li>
+        <form action="/intermediate/statements" method="POST">
+        <button class="button button5" type="submit" data-toggle="tooltip" title="Click to listen to English sentences">STATEMENTS</button>
+        </form>
+    </li>
+    <li>
+        <form action="/intermediate/grammar" method="POST">
+        <button class="button button5" type="submit" data-toggle="tooltip" title="Click to listen to conversations in english">GRAMMAR</button>
+        </form>
+    </li>
+    <li>
+        <form action="/intermediate/conversations" method="POST">
+        <button class="button button5" type="submit" data-toggle="tooltip" title="Click to listen to conversations in english">CONVERSATIONS</button>
+        </form>
+    </li>
+    <li>
+        <form action="/intermediate/questions" method="POST">
+        <button class="button button5" type="submit" data-toggle="tooltip" title="Click to test your understanding">QUESTIONS</button>
+        </form>
+    </li>
+    </div>

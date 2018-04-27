@@ -10,7 +10,7 @@ body, html {
     margin: 0;
     padding: 10;
     overflow: hidden;
-    background-color: #000;
+    background-color: #f19a16;
 }
 
 .li_menu{
@@ -19,15 +19,19 @@ body, html {
 }
 
 .li_menu_a{
+    font-family: "Verdana", Geneva, sans-serif;
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .li_menu_a:hover:not(.active) {
     background-color: white;
+
 }
 
 .active {
@@ -35,7 +39,7 @@ body, html {
 }
 .bg { 
     /* The image used */
-    background-image: url("/static/10.jpg");
+    background-image: url("/static/black2.jpg");
 
     /* Full height */
     height: 100%; 
@@ -81,11 +85,11 @@ label{
 	padding: 30px 20px;
 }
 p{
-	font-family: "Times New Roman", Times, serif;
-	font-size: 40px;
-	text-align: center;
-	font-style: italic;
-	
+  font-family: "Verdana", Geneva, sans-serif;
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  
 }
 .button5 {border-radius: 60%;
 text-align: center;}
@@ -128,7 +132,7 @@ li a:hover {
 </style>
 <body class="bg">
 <ul class="ul_menu">
-  <li class="li_menu"><a class="li_menu_a" href="#home">Home</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="page1">Home</a></li>
   <li class="li_menu"><a class="li_menu_a" href="#news">News</a></li>
   <li class="li_menu"><a class="li_menu_a" href="#contact">Contact</a></li>
   <li class="li_menu"><a class="li_menu_a" class="active" href="#about">About</a></li>

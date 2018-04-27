@@ -1,0 +1,338 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+body, html {
+    height: 100%;
+}
+
+div {
+
+background: transparent;
+}
+.ul_menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 10;
+    overflow: hidden;
+    background-color: #f19a16;
+}
+
+.li_menu{
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.li_menu_a{
+    font-family: "Verdana", Geneva, sans-serif;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.li_menu_a:hover:not(.active) {
+    background-color: white;
+
+}
+
+.active {
+    background-color: #4CAF50;
+}
+.bg {
+    /* The image used */
+    background-image: url("/static/black2.jpg");
+
+    /* Full height */
+
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text {
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 20px;
+    margin: 8px 0;
+
+
+}
+.submit {
+ 	text-align: center;
+    padding: 30px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+h1{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 140px;
+	font-style: italic;
+
+}
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: auto;
+	align-content: center;
+}
+label{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 30px;
+	font-style: italic;
+	padding: 30px 20px;
+}
+p{
+	font-family: "Verdana", Geneva, sans-serif;
+	font-size: 30px;
+	text-align: center;
+  color: #fff;
+
+}
+.button5 {border-radius: 60%;
+text-align: center;}
+.button {
+    background-color: #7eb530;
+    border: none;
+    color: #130202;
+    padding:50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 4px 2px;
+    margin-left: 230px;
+}
+
+.button:hover{
+	background-color: #f65d14e3;
+}
+.ul_in {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    align-self: center;
+    display: inline;
+
+}
+.w3-center{text-align:center!important}
+.mySlides {display:none}
+.w3-content{max-width:450px;margin:auto}
+.w3-section{margin-top:16px!important;margin-bottom:16px!important}
+
+.w3-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.w3-light-grey{color:#000!important;background-color:#f1f1f1!important}
+.w3-display-container{position:relative}
+.w3-display-bottomleft{position:absolute;left:0;bottom:0}
+.w3-large{font-size:24px!important; font-weight:bold}
+.w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}
+.w3-container{padding:0.01em 16px}
+.w3-black{color:#fff!important;background-color:#000!important}
+
+li {
+    float: left;
+
+}
+
+li a:hover {
+    background-color: #111111;
+}
+
+</style>
+<body class="bg">
+<ul class="ul_menu">
+  <li class="li_menu"><a class="li_menu_a" href="#home">Home</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#news">Assistant</a></li>
+  <li class="li_menu"><a class="li_menu_a" href="#contact">Help</a></li>
+  <li class="li_menu"><a class="li_menu_a" class="active" href="#about">My score</a></li>
+</ul>
+<form>
+	<p>Welcome to level 1 in basic class. You have selected foods card set.</p>
+	<p>Let us now study the names of foods</p>
+	<div align="center">
+
+        <div class="w3-content w3-display-container">
+          <div class="w3-display-container mySlides">
+            <a onclick="myAudioFunction('apple');">
+              <img src="/static/apples.jpg" style="width:100%" title="Click on image to listen the audio">
+               <div align="center" class="w3-large w3-container w3-padding-16 w3-black">
+              APPLE
+            </div>
+            </a>
+
+          </div>
+          <div class="w3-display-container mySlides">
+            <a onclick="myAudioFunction('orange');">
+              <img src="/static/oranges.jpg" style="width:100%" title="Click on image to listen the audio">
+               <div align="center" class="w3-large w3-container w3-padding-16 w3-black">
+              ORANGE
+            </div>
+            </a>
+
+          </div>
+          <div class="w3-display-container mySlides">
+            <a onclick="myAudioFunction('tomato');">
+              <img src="/static/tomatoes.jpg" style="width:100%" title="Click on image to listen the audio">
+               <div align="center" class="w3-large w3-container w3-padding-16 w3-black">
+              TOMATO
+            </div>
+            </a>
+
+          </div>
+          <div class="w3-display-container mySlides">
+            <a onclick="myAudioFunction('milk');">
+              <img src="/static/milk.jpg" style="width:100%" title="Click on image to listen the audio">
+               <div align="center" class="w3-large w3-container w3-padding-16 w3-black">
+              MILK
+            </div>
+            </a>
+
+          </div>
+          <div class="w3-display-container mySlides">
+            <a onclick="myAudioFunction('bread');">
+              <img src="/static/bread.jpg" style="width:100%" title="Click on image to listen the audio">
+               <div align="center" class="w3-large w3-container w3-padding-16 w3-black">
+              BREAD
+            </div>
+            </a>
+
+          </div>
+          <div class="w3-display-container mySlides">
+            <a onclick="myAudioFunction('egg');">
+              <img src="/static/eggs.jpg" style="width:100%" title="Click on image to listen the audio">
+               <div align="center" class="w3-large w3-container w3-padding-16 w3-black">
+              EGG
+            </div>
+            </a>
+
+          </div>
+          <div class="w3-display-container mySlides">
+            <a onclick="myAudioFunction('tea');">
+              <img src="/static/tea.jpg" style="width:100%" title="Click on image to listen the audio">
+               <div align="center" class="w3-large w3-container w3-padding-16 w3-black">
+              TEA
+            </div>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="w3-center">
+          <div class="w3-section">
+            <button type="button" class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+            <button type="button" class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+          </div>
+
+
+        </div>
+
+</div>
+<script>
+     var apple_Audio = new Audio('https://dictionary.cambridge.org/us/media/english/us_pron_ogg/a/app/apple/apple.ogg');
+     var orange_audio = new Audio('https://dictionary.cambridge.org/us/media/english/us_pron_ogg/e/eus/eus75/eus75268.ogg');
+     var tomato_audio= new Audio('https://dictionary.cambridge.org/us/media/english/us_pron_ogg/u/usb/usb03/usb03206.ogg');
+     var milk_audio= new Audio('https://dictionary.cambridge.org/us/media/english/us_pron_ogg/m/mil/milk_/milk.ogg');
+     var bread_audio= new Audio('https://dictionary.cambridge.org/us/media/english/us_pron_ogg/b/bre/bread/bread.ogg');
+     var egg_audio= new Audio('https://dictionary.cambridge.org/us/media/english/us_pron_ogg/e/egg/egg__/egg.ogg');
+     var tea_audio= new Audio('https://dictionary.cambridge.org/us/media/english/us_pron_ogg/t/t__/t____/t.ogg');
+
+     function myAudioFunction(letter) {
+      switch(letter){
+        case "apple":
+          if(apple_Audio.paused){
+            apple_Audio.play()
+            }
+          else{
+            apple_Audio.pause();
+            }
+          break;
+        case "orange":
+          if(orange_audio.paused){
+            orange_audio.play()
+              }
+          else{
+            orange_audio.pause();
+              }
+          break;
+        case "tomato":
+          if(tomato_audio.paused){
+            tomato_audio.play()
+            }
+          else{
+            tomato_audio.pause();
+            }
+          break;
+        case "milk":
+          if(milk_audio.paused){
+              milk_audio.play()
+            }
+          else{
+              milk_audio.pause();
+            }
+          break;
+        case "bread":
+          if(bread_audio.paused){
+            bread_audio.play()
+            }
+          else{
+            bread_audio.pause();
+            }
+          break;
+        case "egg":
+          if(egg_audio.paused){
+              egg_audio.play()
+            }
+          else{
+              egg_audio.pause();
+            }
+          break;
+        case "tea":
+          if(tea_audio.paused){
+              tea_audio.play()
+            }
+          else{
+              tea_audio.pause();
+            }
+          break;
+
+
+      }
+
+     }
+
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " w3-red";
+    }
+ </script>
+</body>

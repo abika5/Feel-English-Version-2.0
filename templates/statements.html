@@ -1,13 +1,33 @@
-<link rel="stylesheet" href="/static/style.css" type="text/css"> 
+<link rel="stylesheet" href="/static/style.css" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <style> 
 body, html {
     height: 100%;
+    width: 100%;
 }
+html.scrolled {
+    background-color: #f19a16;
+     background-image: url("/static/black2.jpg");
 
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 div {
 
-background: transparent;
+background-image: url("/static/black2.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .ul_menu{
     list-style-type: none;
@@ -46,7 +66,6 @@ background: transparent;
     background-image: url("/static/black2.jpg");
 
     /* Full height */
-
     height: 100%; 
 
     /* Center and scale the image nicely */
@@ -61,6 +80,10 @@ background: transparent;
     margin: 8px 0;
 
     
+}
+audio controls
+{
+  text-align: left;
 }
 .submit {
   text-align: center;
@@ -87,11 +110,19 @@ label{
   font-style: italic;
   padding: 30px 20px;
 }
+li
+{
+  font-family: "Verdana", Geneva, sans-serif;
+  font-size: 30px;
+  text-align: left;
+  line-height: 100%;
+}
 p{
   font-family: "Verdana", Geneva, sans-serif;
   font-size: 30px;
   text-align: center;
-  color: #fff;
+  line-height: 100%;
+  color: white;
   
 }
 .button5 {border-radius: 60%;
@@ -137,7 +168,8 @@ text-align: center;}
 .w3-black{color:#fff!important;background-color:#000!important}
 
 li {
-    float: left;
+    float: down;
+    color: white;
 
 }
 
@@ -154,33 +186,38 @@ li a:hover {
   <li class="li_menu"><a class="li_menu_a" class="active" href="#about">My score</a></li>
 </ul>
 <div>
-<form>
-	<p>This is the fore most level in this course</p>
-	<p>We will be studying about nouns and their usage in a sentence. This basic course has 3 levels and on each level we will learn new set of nouns and their usage.Happy Studying!</p>
-	<div class="table">
-	<ul class="ul_in">
-		<li>
-  			<form action="/basic">
-  				
-  			</form>
-  		</li>
-		
-  		<li>
-  			<form action="/level1_basic_main">
-  				<button class="button button5" type="submit">LEVEL 1</button>
-  			</form>
-  		</li>
-  		<li>
-  			<form action="/level2_basic_main">
-  				<button class="button button5" type="submit">LEVEL 2</button>
-  			</form>
-  		</li>
-  		<li>
-  			<form action="/level3_basic">
-  				<button class="button button5" type="submit">LEVEL 3</button>
-  			</form>
-  		</li>
-  		  
-</ul>
+<p>This page has multiple audio files of english sentences</p>
+<p>Listen to audio and answer questions in the next section</p>
+<p>Every sentence is repeated 3 times to learn better</p>
+<p>Enjoy learning!!!</p>
+<p><li data-toggle="tooltip" title="Click below to listen to English sentences">Sentences on drinks and beverages</li></p>
+<audio controls>
+  <source src="/static/ENEM012.mp3" type="audio/mpeg">
+<p>Your browser does not support the audio element.</p>
+</audio
+<p><li data-toggle="tooltip" title="Click below to listen to English sentences">Sentences on activities</li></p>
+<audio controls>
+  <source src="/static/ENEM013.mp3" type="audio/mpeg">
+<p>Your browser does not support the audio element.</p>
+</audio>
+<p><li data-toggle="tooltip" title="Click below to listen to English sentences">Sentences on colors</li></p>
+<audio controls>
+  <source src="/static/ENEM014.mp3" type="audio/mpeg">
+<p>Your browser does not support the audio element.</p>
+</audio>
+<p><li data-toggle="tooltip" title="Click below to listen to English sentences">Sentences on fruits and food</li></p>
+<audio controls>
+  <source src="/static/ENEM015.mp3" type="audio/mpeg">
+<p>Your browser does not support the audio element.</p>
+</audio>
+<p><li data-toggle="tooltip" title="Click below to listen to English sentences">Sentences on seasons and weather</li></p>
+<audio controls>
+  <source src="/static/ENEM016.mp3" type="audio/mpeg">
+<p>Your browser does not support the audio element.</p>
+</audio>
+<p><li data-toggle="tooltip" title="Click below to listen to English sentences">Sentences on around the house</li></p>
+<audio controls>
+  <source src="/static/ENEM017.mp3" type="audio/mpeg">
+<p>Your browser does not support the audio element.</p>
+</audio>
 </div>
-</body>
